@@ -1,0 +1,47 @@
+﻿<Window x:Class="proba2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:proba2"
+        mc:Ignorable="d"
+           Title="Warframe Damage Calculator" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <Button Content="Оружие" Click="OnWeaponButtonClick" Margin="5"/>
+            <Button Content="Противник" Click="OnMobButtonClick" Margin="5"/>
+        </StackPanel>
+
+        <StackPanel x:Name="ModButtonsPanel" Orientation="Vertical" Grid.Row="1" Margin="5">
+            <!-- 8 кнопок для модов -->
+            <Button Content="Мод 1" Click="OnModButtonClick" Margin="5"/>
+            <Button Content="Мод 2" Click="OnModButtonClick" Margin="5"/>
+            <Button Content="Мод 3" Click="OnModButtonClick" Margin="5"/>
+            <Button Content="Мод 4" Click="OnModButtonClick" Margin="5"/>
+            <Button Content="Мод 5" Click="OnModButtonClick" Margin="5"/>
+            <Button Content="Мод 6" Click="OnModButtonClick" Margin="5"/>
+            <Button Content="Мод 7" Click="OnModButtonClick" Margin="5"/>
+            <Button Content="Мод 8" Click="OnModButtonClick" Margin="5"/>
+        </StackPanel>
+
+        <Button Content="Рассчитать урон" Click="OnCalculateDamageClick" Grid.Row="2" Margin="5"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="3">
+            <ListBox x:Name="WeaponsListBox" Width="200" Height="200" Margin="5"/>
+            <ListBox x:Name="MobsListBox" Width="200" Height="200" Margin="5"/>
+            <ListBox x:Name="ModsListBox"
+         SelectionChanged="ModsListBox_SelectionChanged"
+         d:ItemsSource="{d:SampleData ItemCount=5}"
+         Width="200"
+         Height="200"
+         Margin="5"/>
+        </StackPanel>
+    </Grid>
+</Window>
